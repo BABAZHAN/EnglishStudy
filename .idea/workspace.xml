@@ -1,34 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="294a2302-06b8-4b87-b974-0d354caf78d0" name="Changes" comment="requirments">
-      <change afterPath="$PROJECT_DIR$/services/speech/tts_engine.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_speaking_orchestrator.py" afterDir="false" />
+    <list default="true" id="294a2302-06b8-4b87-b974-0d354caf78d0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ui/dialogs/base_dialog.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/widgets/custom_button.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/windows/main_window.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/orchestrator/speaking_exam_orchestrator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core/evaluation/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/orchestrator/speaking_orchestrator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core/evaluation/cefr.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/orchestrator/speaking_questions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core/orchestrator/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/progress/speaking_progress.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core/orchestrator/learning_orchestrator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/core/orchestrator/policies.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/speech/grammar_analyzer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/evaluation/cefr.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/speech/cefr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/orchestrator/learning_orchestrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/orchestrator/learning_orchestrator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirments.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirments.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/speech/feedback.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/speech/feedback.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/speech/stt_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/speech/stt_engine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/speech/pronunciation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests/audio/sample.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/tests/audio/sample.mp3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests/test_speech_analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_speech_analyzer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests/test_stt.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_stt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,41 +39,35 @@
     <commands />
     <urls />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="397n4qWYfTtbck2Fe8AQWM0cgCn" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.create_structure.executor": "Run",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "ai.playground.ignore.import.keys.banner.in.settings": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.create_structure.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\epicl\PycharmProjects\EnglishStudy\tests" />
-    </key>
-  </component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -102,15 +86,6 @@
       <workItem from="1770055790097" duration="1000" />
       <workItem from="1770057588920" duration="242000" />
     </task>
-    <task id="LOCAL-00001" summary="requirments">
-      <option name="closed" value="true" />
-      <created>1770061443269</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1770061443269</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,10 +101,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="requirments" />
-    <option name="LAST_COMMIT_MESSAGE" value="requirments" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EnglishStudy$create_structure.coverage" NAME="Результаты покрытия create_structure" MODIFIED="1770057760696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
