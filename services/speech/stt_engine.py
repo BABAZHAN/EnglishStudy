@@ -5,6 +5,7 @@ from faster_whisper import WhisperModel
 class SpeechToTextEngine:
     """
     Speech-to-Text engine based on faster-whisper.
+    Uses lazy model loading for performance and testability.
     """
 
     def __init__(
@@ -13,29 +14,27 @@ class SpeechToTextEngine:
         device: str = "cpu",
         compute_type: str = "int8"
     ) -> None:
-        """
-        model_size: tiny | base | small | medium
-        device: cpu | cuda
-        compute_type: int8 | float16 | float32
-        """
-        self.model = WhisperModel(
-            model_size,
-            device=device,
-            compute_type=compute_type
-        )
+        self.model_size = model_size
+        self.device = device
+        self.compute_type = compute_type
+        self._model: WhisperModel | None = None
+
+    def _load_model(self) -> None:
+        if self._model is None:
+            self._model = WhisperModel(
+                self.model_size,
+                device=self.device,
+                compute_type=self.compute_type
+            )
 
     def transcribe(self, audio_path: str) -> Dict[str, Any]:
-        """
-        Transcribes audio file to text.
+        self._load_model()
 
-        Returns:
-        {
-            "text": str,
-            "segments": List[dict],
-            "language": str
-        }
-        """
-        segments, info = self.model.transcribe(audio_path)
+        segments, info = self._model.transcribe(
+            audio_path,
+            beam_size=5,
+            vad_filter=True
+        )
 
         text_parts: List[str] = []
         segment_data: List[Dict[str, Any]] = []
