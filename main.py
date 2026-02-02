@@ -1,16 +1,12 @@
-# This is a sample Python script.
+import sys
+from PySide6.QtWidgets import QApplication
+from ui.windows.main_window import MainWindow
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    app.setStyle("Fusion")  # Кроссплатформенный стиль
 
+    window = MainWindow()
+    window.show()
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    sys.exit(app.exec())
