@@ -1,0 +1,12 @@
+python-dateutil>=2.9
+PySide6>=6.6
+faster-whisper>=0.10.0
+sounddevice>=0.4.6
+scipy>=1.11
+spacy>=3.7
+wordfreq>=3.0
+SQLAlchemy>=2.0
+duckdb>=0.10
+aiohttp>=3.9
+qasync>=0.27
+pytest>=9.0
