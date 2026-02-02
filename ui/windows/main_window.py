@@ -1,17 +1,22 @@
-from PySide6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QLabel
-from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QMainWindow, QTabWidget
+from ui.windows.today_tab import TodayTab
+from ui.windows.progress_tab import ProgressTab
+from ui.windows.reading_tab import ReadingTab  # ← импорт из windows
 
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Моё приложение")
-        self.resize(800, 600)
+        self.setWindowTitle("Lang Trainer")
+        self.resize(1000, 700)
 
-        # Центральный виджет
-        central_widget = QWidget()
-        layout = QVBoxLayout(central_widget)
-        layout.setAlignment(Qt.AlignCenter)
-        layout.addWidget(QLabel("Добро пожаловать!"))
+        self.tabs = QTabWidget()
+        self.today_tab = TodayTab()
+        self.reading_tab = ReadingTab()  # ← ReadingTab
+        self.progress_tab = ProgressTab()
 
-        self.setCentralWidget(central_widget)
+        self.tabs.addTab(self.today_tab, "🏠 Сегодня")
+        self.tabs.addTab(self.reading_tab, "📖 Чтение")  # ← вкладка добавлена
+        self.tabs.addTab(self.progress_tab, "📈 Прогресс")
+
+        self.setCentralWidget(self.tabs)
