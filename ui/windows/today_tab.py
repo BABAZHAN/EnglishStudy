@@ -3,6 +3,7 @@ from PySide6.QtCore import Qt, QSize
 from PySide6.QtGui import QFont
 import random
 from db.database import save_progress  # ← импорт функции БД
+from PySide6.QtCore import Signal
 
 
 class TodayTab(QWidget):
@@ -58,3 +59,13 @@ class TodayTab(QWidget):
         )
         self.start_btn.setEnabled(True)
         self.start_btn.setText("🔄 Повторить")
+
+
+class TodayTab(QWidget):
+    progress_updated = Signal()  # ← добавь в начало класса
+
+    def on_start_clicked(self):
+        # ... существующий код ...
+
+        # После сохранения прогресса:
+        self.progress_updated.emit()  # ← эмитируем сигнал

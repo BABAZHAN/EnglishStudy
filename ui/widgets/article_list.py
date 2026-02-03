@@ -5,7 +5,7 @@ from content.rss_fetcher import get_articles, fetch_articles
 
 
 class ArticleListWidget(QWidget):
-    article_selected = Signal(str, str, str)  # title, content, url
+    article_selected = Signal(str, str, str, int)  # title, content, url
 
     def __init__(self):
         super().__init__()
@@ -58,8 +58,7 @@ class ArticleListWidget(QWidget):
         self.refresh_btn.setText(f"✅ +{saved} новых" if saved else "🔄 Обновить контент")
 
     def on_item_clicked(self, item):
-        """Эмитирует сигнал при клике на статью"""
         data = item.data(Qt.UserRole)
         if data:
-            _, title, content, url = data
-            self.article_selected.emit(title, content, url)
+            art_id, title, content, url = data
+            self.article_selected.emit(title, content, url, art_id)

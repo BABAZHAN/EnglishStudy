@@ -210,7 +210,22 @@ def init_db():
     conn.commit()
     conn.close()
 
-    init_articles_table()  # ← 
+    init_articles_table()  # ←
+
+def save_reading_progress(article_id: int, cefr_level: str, comprehension_score: float):
+    """Сохраняет результат чтения в БД"""
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+
+     # Сохраняем как 'reading' skill
+    cur.execute(
+        "INSERT INTO progress (skill, cefr_level, score) VALUES (?, ?, ?)",
+        ('reading', cefr_level, comprehension_score)
+    )
+
+    conn.commit()
+    conn.close()
+    return cur.lastrowid
 
 if __name__ == "__main__":
     init_db()

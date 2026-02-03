@@ -42,3 +42,7 @@ class ProgressTab(QWidget):
             self.table.setRowCount(1)
             self.table.setItem(0, 0, QTableWidgetItem("Нет данных"))
             self.table.setSpan(0, 0, 1, 4)
+
+    def refresh(self):
+        """Обновляет данные без пересоздания таблицы"""
+        self.load_data()

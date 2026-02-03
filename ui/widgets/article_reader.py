@@ -2,6 +2,9 @@ from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel, QTextBrowser, QPushB
 from PySide6.QtCore import Qt, QUrl
 from PySide6.QtGui import QFont, QDesktopServices
 from content.text_analyzer import get_word_stats
+import random
+from PySide6.QtWidgets import QMessageBox
+from db.database import save_reading_progress
 
 
 class ArticleReaderWidget(QWidget):
@@ -49,6 +52,25 @@ class ArticleReaderWidget(QWidget):
         self.stats_layout.addWidget(self.level_label)
         self.stats_layout.addSpacing(5)
 
+        # Кнопка "Прочитано ✓"
+        self.done_btn = QPushButton("✅ Прочитано (оценить понимание)")
+        self.done_btn.clicked.connect(self.on_done_clicked)  # ← теперь метод существует!
+        self.done_btn.setVisible(False)
+        self.done_btn.setStyleSheet("""
+            QPushButton {
+                background-color: #2196F3;
+                color: white;
+                border-radius: 8px;
+                padding: 12px;
+                font-size: 14px;
+                font-weight: bold;
+            }
+            QPushButton:hover {
+                background-color: #1976D2;
+            }
+        """)
+        layout.addWidget(self.done_btn)
+
         # Статистика слов
         self.word_stats = QLabel()
         self.word_stats.setFont(QFont("Arial", 11))
@@ -71,20 +93,16 @@ class ArticleReaderWidget(QWidget):
 
         self.setLayout(layout)
 
-    def set_empty_state(self):
-        self.title_label.setText("Выберите статью для чтения")
-        self.content_browser.setHtml(
-            "<p style='color: #888; text-align: center;'>← Слева выберите статью из списка</p>")
-        self.open_btn.setVisible(False)
-        self.current_url = None
 
-    def set_article(self, title: str, content: str, url: str):
+    def set_article(self, title: str, content: str, url: str, article_id: int = None):
         self.title_label.setText(title)
         self.content_browser.setHtml(f"<div style='max-width: 800px; margin: 0 auto;'>{content}</div>")
         self.open_btn.setVisible(True)
+        self.done_btn.setVisible(True)
         self.current_url = url
+        self.current_article_id = article_id
 
-        # Добавляем статистику
+        # Статистика
         stats = get_word_stats(content)
         level = stats["estimated_level"]
         self.level_label.setText(f"Уровень текста: {level}")
@@ -102,6 +120,37 @@ class ArticleReaderWidget(QWidget):
         self.word_stats.setText(
             f"Слов: {stats['word_count']} | Уникальных: {stats['unique_words']}"
         )
+
+    def on_done_clicked(self):
+        """Сохраняет результат чтения"""
+        if not hasattr(self, 'current_article_id'):
+            return
+
+        # Имитация оценки понимания
+        comprehension = round(random.uniform(70, 95), 1)
+        level = self.level_label.text().replace("Уровень текста: ", "")
+
+        # Сохраняем в БД
+        save_reading_progress(self.current_article_id, level, comprehension)
+
+        # Уведомление
+        QMessageBox.information(
+            self,
+            "✅ Чтение завершено",
+            f"Уровень текста: {level}\nПонимание: {comprehension}%\n\n"
+            "Результат сохранён в прогресс!"
+        )
+
+        # Скрываем кнопку
+        self.done_btn.setVisible(False)
+
+
+    def set_empty_state(self):
+        self.title_label.setText("Выберите статью для чтения")
+        self.content_browser.setHtml(
+            "<p style='color: #888; text-align: center;'>← Слева выберите статью из списка</p>")
+        self.open_btn.setVisible(False)
+        self.current_url = None
 
     def on_open_original(self):
         if self.current_url:

@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="294a2302-06b8-4b87-b974-0d354caf78d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ui/dialogs/base_dialog.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/widgets/custom_button.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/windows/main_window.py" afterDir="false" />
+    <list default="true" id="294a2302-06b8-4b87-b974-0d354caf78d0" name="Changes" comment="project/&#10;├── ui/&#10;│   ├── windows/&#10;│   │   ├── main_window.py&#10;│   │   ├── today_tab.py&#10;│   │   ├── progress_tab.py&#10;│   │   └── reading_tab.py   ← остаётся здесь!&#10;│   ├── widgets/&#10;│   │   ├── article_list.py&#10;│   │   └── article_reader.py&#10;│   └── dialogs/&#10;└── content/&#10;    └── text_analyzer.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirments.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirments.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/article_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/article_list.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/widgets/article_reader.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/widgets/article_reader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/windows/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/windows/main_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/windows/progress_tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/windows/progress_tab.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/windows/today_tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/windows/today_tab.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +36,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/BABAZHAN/EnglishStudy.git&quot;,
-    &quot;accountId&quot;: &quot;9955f8a3-a62b-4d32-8426-7ad0e60384d3&quot;
+    &quot;accountId&quot;: &quot;32523902-8fa7-4d06-b6f9-c9924783aacc&quot;
   }
 }</component>
   <component name="McpProjectServerCommands">
@@ -53,7 +57,12 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.article_reader.executor&quot;: &quot;Run&quot;,
     &quot;Python.create_structure.executor&quot;: &quot;Run&quot;,
+    &quot;Python.database.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main_window.executor&quot;: &quot;Run&quot;,
+    &quot;Python.reading_tab.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -63,7 +72,8 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -85,6 +95,9 @@
       <updated>1770055789058</updated>
       <workItem from="1770055790097" duration="1000" />
       <workItem from="1770057588920" duration="242000" />
+      <workItem from="1770136664286" duration="1057000" />
+      <workItem from="1770137739146" duration="330000" />
+      <workItem from="1770139945209" duration="2064000" />
     </task>
     <servers />
   </component>
@@ -102,7 +115,16 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/EnglishStudy$database.coverage" NAME="database Coverage Results" MODIFIED="1770062738082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
+    <SUITE FILE_PATH="coverage/EnglishStudy$reading_tab.coverage" NAME="reading_tab Coverage Results" MODIFIED="1770063717295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui/windows" />
+    <SUITE FILE_PATH="coverage/EnglishStudy$main.coverage" NAME="main Coverage Results" MODIFIED="1770141839583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/EnglishStudy$create_structure.coverage" NAME="Результаты покрытия create_structure" MODIFIED="1770057760696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/EnglishStudy$main_window.coverage" NAME="main_window Coverage Results" MODIFIED="1770062116909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui/windows" />
+    <SUITE FILE_PATH="coverage/EnglishStudy$article_reader.coverage" NAME="article_reader Coverage Results" MODIFIED="1770141344956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui/widgets" />
   </component>
 </project>
