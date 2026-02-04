@@ -31,5 +31,5 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.tabs)
 
     def on_progress_updated(self):
-        """Обновляем таблицу прогресса"""
-        self.progress_tab.refresh()
+        """Обновляем таблицу прогресса БЕЗ пересоздания виджета"""
+        self.progress_tab.load_data()  # ← просто перезагружаем данные
