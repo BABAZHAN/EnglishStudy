@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="294a2302-06b8-4b87-b974-0d354caf78d0" name="Changes" comment="Сохранение чтения в БД&#10;&#10;Автообновление прогресса&#10;&#10;Единая таблица для всех навыков&#10;&#10;Готовность к интеграции">
+    <list default="true" id="294a2302-06b8-4b87-b974-0d354caf78d0" name="Changes" comment="✅ Вкладка «Чтение» — статьи + статистика сложности&#10;✅ Вкладка «Сегодня» — микрофон + анализ речи + сохранение в БД&#10;✅ Вкладка «Прогресс» — единая таблица без перезапуска">
+      <change afterPath="$PROJECT_DIR$/ui/dialogs/level_result_dialog.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/dialogs/placement_test_dialog.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/windows/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/windows/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/windows/today_tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/windows/today_tab.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +94,7 @@
       <workItem from="1770136664286" duration="1057000" />
       <workItem from="1770137739146" duration="330000" />
       <workItem from="1770139945209" duration="2347000" />
-      <workItem from="1770200489382" duration="1846000" />
+      <workItem from="1770200489382" duration="2952000" />
     </task>
     <task id="LOCAL-00001" summary="Сохранение чтения в БД&#10;&#10;Автообновление прогресса&#10;&#10;Единая таблица для всех навыков&#10;&#10;Готовность к интеграции">
       <option name="closed" value="true" />
@@ -104,7 +104,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770142053858</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="✅ Вкладка «Чтение» — статьи + статистика сложности&#10;✅ Вкладка «Сегодня» — микрофон + анализ речи + сохранение в БД&#10;✅ Вкладка «Прогресс» — единая таблица без перезапуска">
+      <option name="closed" value="true" />
+      <created>1770202371673</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1770202371673</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,12 +132,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Сохранение чтения в БД&#10;&#10;Автообновление прогресса&#10;&#10;Единая таблица для всех навыков&#10;&#10;Готовность к интеграции" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сохранение чтения в БД&#10;&#10;Автообновление прогресса&#10;&#10;Единая таблица для всех навыков&#10;&#10;Готовность к интеграции" />
+    <MESSAGE value="✅ Вкладка «Чтение» — статьи + статистика сложности&#10;✅ Вкладка «Сегодня» — микрофон + анализ речи + сохранение в БД&#10;✅ Вкладка «Прогресс» — единая таблица без перезапуска" />
+    <option name="LAST_COMMIT_MESSAGE" value="✅ Вкладка «Чтение» — статьи + статистика сложности&#10;✅ Вкладка «Сегодня» — микрофон + анализ речи + сохранение в БД&#10;✅ Вкладка «Прогресс» — единая таблица без перезапуска" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EnglishStudy$database.coverage" NAME="database Coverage Results" MODIFIED="1770062738082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
     <SUITE FILE_PATH="coverage/EnglishStudy$reading_tab.coverage" NAME="reading_tab Coverage Results" MODIFIED="1770063717295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui/windows" />
-    <SUITE FILE_PATH="coverage/EnglishStudy$main.coverage" NAME="main Coverage Results" MODIFIED="1770202117330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/EnglishStudy$main.coverage" NAME="main Coverage Results" MODIFIED="1770203146998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/EnglishStudy$create_structure.coverage" NAME="Результаты покрытия create_structure" MODIFIED="1770057760696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/EnglishStudy$main_window.coverage" NAME="main_window Coverage Results" MODIFIED="1770062116909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui/windows" />
     <SUITE FILE_PATH="coverage/EnglishStudy$article_reader.coverage" NAME="article_reader Coverage Results" MODIFIED="1770141344956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui/widgets" />
