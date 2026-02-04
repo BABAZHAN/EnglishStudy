@@ -104,10 +104,10 @@ def get_recent_progress(limit: int = 10):
 
 
 def init_articles_table():
-    """Создаёт таблицу для статей"""
     conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
 
+    # Создаём таблицу с колонкой уровня
     cur.execute("""
                 CREATE TABLE IF NOT EXISTS articles
                 (
@@ -119,7 +119,7 @@ def init_articles_table():
                     source
                     TEXT
                     NOT
-                    NULL, -- 'bbc', 'voa'
+                    NULL,
                     title
                     TEXT
                     NOT
@@ -133,12 +133,22 @@ def init_articles_table():
                     NOT
                     NULL
                     UNIQUE,
+                    cefr_level
+                    TEXT
+                    DEFAULT
+                    'A2', -- ← новая колонка
                     fetched_at
                     TIMESTAMP
                     DEFAULT
                     CURRENT_TIMESTAMP
                 )
                 """)
+
+    # Добавляем колонку, если таблица уже существовала без неё
+    try:
+        cur.execute("ALTER TABLE articles ADD COLUMN cefr_level TEXT DEFAULT 'A2'")
+    except sqlite3.OperationalError:
+        pass  # Колонка уже существует
 
     conn.commit()
     conn.close()
@@ -226,6 +236,66 @@ def save_reading_progress(article_id: int, cefr_level: str, comprehension_score:
     conn.commit()
     conn.close()
     return cur.lastrowid
+
+
+def init_user_profile_table():
+    """Создаёт таблицу профиля пользователя"""
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+
+    cur.execute("""
+                CREATE TABLE IF NOT EXISTS user_profile
+                (
+                    id
+                    INTEGER
+                    PRIMARY
+                    KEY
+                    CHECK
+                (
+                    id =
+                    1
+                ), -- только одна запись
+                    cefr_level TEXT DEFAULT 'A1',
+                    target_level TEXT DEFAULT 'B2',
+                    last_tested TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    words_learned INTEGER DEFAULT 0
+                    )
+                """)
+
+    # Создаём дефолтную запись, если нет
+    cur.execute("INSERT OR IGNORE INTO user_profile (id, cefr_level) VALUES (1, 'A1')")
+
+    conn.commit()
+    conn.close()
+
+
+def get_user_level() -> str:
+    """Получает текущий уровень пользователя"""
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+    cur.execute("SELECT cefr_level FROM user_profile WHERE id = 1")
+    row = cur.fetchone()
+    conn.close()
+    return row[0] if row else "A1"
+
+
+def set_user_level(level: str):
+    """Сохраняет уровень пользователя"""
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+    cur.execute(
+        "UPDATE user_profile SET cefr_level = ?, last_tested = CURRENT_TIMESTAMP WHERE id = 1",
+        (level,)
+    )
+    conn.commit()
+    conn.close()
+
+
+# Обнови init_db() — добавь вызов новой функции в конец:
+def init_db():
+    # ... существующий код ...
+    init_articles_table()
+    init_user_profile_table()  # ← добавь эту строку
 
 if __name__ == "__main__":
     init_db()
